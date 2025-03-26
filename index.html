@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Markdown Parser</title>
+</head>
+<body>
+   <h1 id="main-heading">Markdown Parser</h1>
+   <div class="container">
+      <textarea name="mdInput" id="md-input" class="big-box"></textarea>
+      <div class="md-display" id="md-display" class="big-box"></div>
+   </div>
+   <button id="reset-button">
+      <span class="shadow"></span>
+      <span class="edge"></span>
+      <span class="front text"> Reset
+      </span>
+   </button>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+   <script type="module" src="./index.js"></script>
+</body>
+   
+</html>
