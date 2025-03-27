@@ -1,4 +1,7 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/highlight.min.js";
+
+
 
 const mdInput = document.getElementById('md-input')
 const resetBtn = document.getElementById('reset-button')
@@ -18,4 +21,5 @@ function parseAndRender(){
    const input = mdInput.value;
    const htmlOutput = marked.parse(input);
    htmlDisplay.innerHTML = htmlOutput;
+   hljs.highlightAll()
 }

@@ -1,43 +1,91 @@
+:root{
+   --primary-bg: black;
+   --container-bg: #2E236C;
+   --big-box-bg: #1e1d1d;
+   --big-box-bg-hover: #272727 ;
+   --button-bg: #535C91;
+   --font-color: white;
+   
+}
+
 *{
-   margin: 0;
-   padding: 0;
+   /* margin: 0;
+   padding: 0; */
    box-sizing: border-box;
    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-   padding: 20px 10px;
+   margin: 0;
+   padding: 10px 10px;
+   background-color: var(--primary-bg);
+   color: var(--font-color);
 }
 
 #main-heading{
    text-align: center;
+   margin: 10px 0;
 }
 .container{
    height: 80vh;
    margin-bottom:10px ;
-   border: 2px solid gray;
    border-radius: 10px;
    padding: 10px;
    overflow-y: scroll;
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
 }
 
 .big-box{
-   padding: 10px;
+   padding: 15px;
    border-radius: 5px;
+   background-color: var(--big-box-bg);
+   box-shadow: 2px 2px 4px rgb(41, 39, 39);
+   overflow-y: scroll;
+}
+
+.big-box:hover{
+   transform: scale(1.01);
+   background-color: var(--big-box-bg-hover);
+}
+
+.big-box, .big-box * {
+   transition: all ease-in-out 200ms;
 }
 
 #md-input{
-   width: 45%;
+   resize: vertical;
+   width: 47%;
    border:  none;
+   color: inherit;
    outline: none;
    font-size: 1.2rem;
 }
 
+#md-input:focus{
+   border: 2px solid gray;
+   transform: scale(1.02);
+}
+
+pre code {
+   background-color: #282c34 !important;
+   /* Change to your desired color */
+   color: #ffffff !important;
+   /* Change text color if needed */
+   padding: 15px;
+   border-radius: 5px;
+   display: block;
+}
+
 .md-display{
    width: 45%;
+   
 }
+/* .md-display * {
+   margin: 5px ;
+
+   padding: 5px 0;
+} */
 #reset-button{
    margin: 0 50%;
    transform: translateX(-50%);
@@ -55,6 +103,8 @@ button {
    user-select: none;
    touch-action: manipulation;
 }
+
+
 
 .shadow {
    position: absolute;
@@ -77,10 +127,10 @@ button {
    height: 100%;
    border-radius: 12px;
    background: linear-gradient(to left,
-         hsl(340deg 100% 16%) 0%,
-         hsl(340deg 100% 32%) 8%,
-         hsl(340deg 100% 32%) 92%,
-         hsl(340deg 100% 16%) 100%);
+         hsl(263deg 100% 16%) 0%,
+         hsl(263deg 100% 32%) 8%,
+         hsl(263deg 100% 32%) 92%,
+         hsl(263deg 100% 16%) 100%);
 }
 
 .front {
@@ -90,12 +140,14 @@ button {
    border-radius: 12px;
    font-size: 1.1rem;
    color: white;
-   background: hsl(345deg 100% 47%);
+   background: hsl(263deg 100% 47%);
    will-change: transform;
    transform: translateY(-4px);
    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
-
+a{
+   color: hsl(263, 100%, 26%);;
+}
 button:hover {
    filter: brightness(110%);
 }
@@ -122,4 +174,14 @@ button:active .shadow {
 
 button:focus:not(:focus-visible) {
    outline: none;
+}
+
+::-webkit-scrollbar {
+   display: none;
+}
+
+ 
+* {
+   scrollbar-width: none;
+   scrollbar-color: transparent transparent;
 }
