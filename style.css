@@ -67,7 +67,6 @@ body{
    border:  none;
    color: inherit;
    outline: none;
-   font-size: 1.2rem;
 
 }
 #md-input:focus{
@@ -188,7 +187,7 @@ button:focus:not(:focus-visible) {
 @media (min-width: 640px) {
    /* Styles for small screens */
    .container{
-      height: 90vh;
+      height: 80vh;
       display: flex;
       flex-direction: column-reverse;
       justify-content: space-between;
