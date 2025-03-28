@@ -7,7 +7,7 @@ const mdInput = document.getElementById('md-input')
 const resetBtn = document.getElementById('reset-button')
 const htmlDisplay = document.getElementById('md-display')
 
-
+window.addEventListener('pageshow', parseAndRender)
 
 mdInput.addEventListener("input", parseAndRender);
 
