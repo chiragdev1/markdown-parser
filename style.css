@@ -5,7 +5,7 @@
    --big-box-bg-hover: #272727 ;
    --button-bg: #535C91;
    --font-color: white;
-   
+   --code-bg: #2d333f;
 }
 
 *{
@@ -17,7 +17,7 @@
 
 body{
    margin: 0;
-   padding: 10px 10px;
+   padding: 10px;
    background-color: var(--primary-bg);
    color: var(--font-color);
 }
@@ -25,23 +25,32 @@ body{
 #main-heading{
    text-align: center;
    margin: 10px 0;
+   padding: 0;
 }
 .container{
-   height: 80vh;
    margin-bottom:10px ;
    border-radius: 10px;
    padding: 10px;
-   overflow-y: scroll;
+   padding-bottom: 0;
+   
+   height: 90vh;
    display: flex;
+   flex-direction: column-reverse;
    justify-content: space-between;
 }
 
 .big-box{
    padding: 15px;
+   padding-bottom: 0;
    border-radius: 5px;
    background-color: var(--big-box-bg);
    box-shadow: 2px 2px 4px rgb(41, 39, 39);
+   
+   
    overflow-y: scroll;
+   width: 100%;
+   min-height: 45%;
+   margin: 10px 0;
 }
 
 .big-box:hover{
@@ -55,20 +64,21 @@ body{
 
 #md-input{
    resize: vertical;
-   width: 47%;
    border:  none;
    color: inherit;
    outline: none;
    font-size: 1.2rem;
-}
 
+}
 #md-input:focus{
    border: 2px solid gray;
    transform: scale(1.02);
 }
 
+
+
 pre code {
-   background-color: #282c34 !important;
+   background-color: var(--code-bg) !important;
    /* Change to your desired color */
    color: #ffffff !important;
    /* Change text color if needed */
@@ -77,15 +87,6 @@ pre code {
    display: block;
 }
 
-.md-display{
-   width: 45%;
-   
-}
-/* .md-display * {
-   margin: 5px ;
-
-   padding: 5px 0;
-} */
 #reset-button{
    margin: 0 50%;
    transform: translateX(-50%);
@@ -103,8 +104,6 @@ button {
    user-select: none;
    touch-action: manipulation;
 }
-
-
 
 .shadow {
    position: absolute;
@@ -179,9 +178,56 @@ button:focus:not(:focus-visible) {
 ::-webkit-scrollbar {
    display: none;
 }
-
  
 * {
    scrollbar-width: none;
    scrollbar-color: transparent transparent;
+}
+
+/* For screens 640px and up */
+@media (min-width: 640px) {
+   /* Styles for small screens */
+   .container{
+      height: 90vh;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+   }
+
+   .big-box {
+      overflow-y: scroll;
+      width: 100%;
+      min-height: 45%;
+      margin: 10px 0;
+   }
+
+
+}
+
+
+/* For screens 1024px and up */
+@media (min-width: 1024px) {
+   /* Styles for large screens */
+   .container {
+      flex-direction: row;
+      gap: 20px;
+   }
+
+   .big-box{
+      width: 49%;
+   }
+}
+
+
+
+@media (prefers-color-scheme: light) {
+   :root {
+      --primary-bg: white;
+      --container-bg: #bcb6e0;
+      --big-box-bg: #d4d4d4;
+      --big-box-bg-hover: #c1bfbf;
+      --button-bg: #535C91;
+      --font-color: #000000;
+      --code-bg: #141717;
+      }
 }
