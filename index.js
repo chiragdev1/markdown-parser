@@ -18,6 +18,14 @@ resetBtn.addEventListener('click', (e) => {
 
 
 function parseAndRender(){
+   if(!mdInput.value){
+      htmlDisplay.innerHTML = `
+      <h1>Welcome to Markdown Parser</h1>
+      <hr>
+      <h2>Markdown Preview will be displayed Here</h2>
+      `;
+      return
+   }
    const input = mdInput.value;
    const htmlOutput = marked.parse(input);
    htmlDisplay.innerHTML = htmlOutput;
